@@ -1,6 +1,6 @@
 import colors from 'vuetify/es5/util/colors'
 
-export default {
+export default {  
   server: {
     port: 5504,
     host: '0.0.0.0'
@@ -102,5 +102,6 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+    publicPath: '/todolist-frontend/_nuxt'
   }
 }
