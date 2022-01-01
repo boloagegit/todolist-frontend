@@ -6,6 +6,10 @@ export default {
     host: '0.0.0.0'
   },
 
+  router: {
+    base: '/todolist-frontend/'
+  },
+
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
   ssr: false,
 
@@ -102,6 +106,6 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-    publicPath: '/todolist-frontend/_nuxt'
+    
   }
 }
