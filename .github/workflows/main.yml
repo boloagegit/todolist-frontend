@@ -21,6 +21,8 @@ jobs:
       
     - name: generate
       run: yarn generate
+      env:
+        BASE_URL: https://boloage-todolist-backend.azurewebsites.net/
       
 #     - uses: borales/actions-yarn@v2.3.0
 #       with:
