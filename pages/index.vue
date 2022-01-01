@@ -19,7 +19,7 @@
           <span class="text-secondary-500">{{
             $moment().format("dddd Do")
           }}</span>
-          {{ $moment().format("MMMM") }}
+          {{ $moment().format("MMMM yyyy") }}
         </div>
       </div>
       <v-spacer />
@@ -59,9 +59,12 @@
               :class="{ 'font-bold': true, 'line-through': task.finish }"
               ><div class="text-2xl">{{ task.title }}</div></v-list-item-title
             >
-            <v-list-item-subtitle :class="{ 'line-through': task.finish }">{{
-              task.description
-            }}</v-list-item-subtitle>
+            <v-list-item-subtitle :class="{ 'line-through': task.finish }">
+              {{ task.description }}
+            </v-list-item-subtitle>
+            <v-list-item-subtitle :class="{ 'line-through': task.finish, 'mt-1': true }">
+              🕛 {{$moment(task.createdDate).format("LLL")}}
+            </v-list-item-subtitle>
           </v-list-item-content>
 
           <v-list-item-icon>
