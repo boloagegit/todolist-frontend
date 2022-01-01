@@ -39,7 +39,13 @@
     </v-toolbar>
 
     <dir class="mt-5">
-      <v-list two-line>
+      <v-skeleton-loader
+        v-if="loading"
+        class="mx-auto"
+        type="list-item-two-line"
+      >
+      </v-skeleton-loader>
+      <v-list two-line v-else>
         <v-list-item v-for="task in tasks" :key="task.id">
           <v-list-item-action>
             <v-checkbox
@@ -124,6 +130,7 @@ import { Task } from "~/store/tasks";
 @Component
 export default class IndexPage extends Vue {
   dialog: boolean = false;
+  loading: boolean = false;
   defaultItem: Task = {
     id: undefined,
     title: "",
@@ -197,12 +204,22 @@ export default class IndexPage extends Vue {
       return;
     }
 
-    await taskStore.saveTask(this.editedItem);
-    this.dialog = false;
+    this.loading = true;
+    try {
+      await taskStore.saveTask(this.editedItem);
+      this.dialog = false;
+    } finally {
+      this.loading = true;
+    }
   }
 
   async created() {
-    await taskStore?.loadTasks();
+    this.loading = true;
+    try {
+      await taskStore?.loadTasks();
+    } finally {
+      this.loading = false;
+    }
   }
 }
 </script>
