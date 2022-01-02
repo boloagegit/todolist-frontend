@@ -3,6 +3,19 @@
     <v-main>
       <Nuxt />
     </v-main>
+    <v-footer padless>
+      <v-card class="flex" flat tile>
+        <v-card-title>
+          <strong class="subheading">Get source code at my Github!</strong>
+
+          <v-spacer></v-spacer>
+
+          <v-btn class="mx-4" dark icon href="https://github.com/boloagegit/todolist-frontend" target="_blank">
+            <v-icon size="24px">mdi-github</v-icon>
+          </v-btn>
+        </v-card-title>
+      </v-card>
+    </v-footer>
   </v-app>
 </template>
 
