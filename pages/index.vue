@@ -195,7 +195,7 @@ export default class IndexPage extends Vue {
       await taskStore.saveTask(this.editedItem);
       this.dialog = false;
     } finally {
-      this.loading = true;
+      this.loading = false;
     }
   }
 
