@@ -5,7 +5,7 @@ import TaskModule from '~/store/tasks';
 let taskStore: TaskModule;
 
 function initialiseStores(store: Store<any>): void {
-    taskStore = getModule(TaskModule, store);
+  taskStore = getModule(TaskModule, store);
 }
 
 export { initialiseStores, taskStore };

@@ -1,6 +1,6 @@
 module.exports = {
   purge: [],
-  darkMode: "media", // or 'media' or 'class'
+  darkMode: 'media', // or 'media' or 'class'
   theme: {
     fontFamily: {
       display: ['Poppins', 'system-ui', 'sans-serif'],
@@ -38,4 +38,4 @@ module.exports = {
     extend: {},
   },
   plugins: [],
-}
+};

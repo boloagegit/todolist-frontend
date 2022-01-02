@@ -1,14 +1,14 @@
 <template>
   <v-app dark>
     <v-main>
-        <Nuxt />
+      <Nuxt />
     </v-main>
   </v-app>
 </template>
 
 <script>
 export default {
-  name: "DefaultLayout",
+  name: 'DefaultLayout',
   data() {
     return {
       clipped: false,
@@ -16,20 +16,20 @@ export default {
       fixed: false,
       items: [
         {
-          icon: "mdi-apps",
-          title: "Welcome",
-          to: "/",
+          icon: 'mdi-apps',
+          title: 'Welcome',
+          to: '/',
         },
         {
-          icon: "mdi-chart-bubble",
-          title: "Inspire",
-          to: "/inspire",
+          icon: 'mdi-chart-bubble',
+          title: 'Inspire',
+          to: '/inspire',
         },
       ],
       miniVariant: false,
       right: true,
       rightDrawer: false,
-      title: "Vuetify.js",
+      title: 'Vuetify.js',
     };
   },
 };
