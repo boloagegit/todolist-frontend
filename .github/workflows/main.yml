@@ -19,6 +19,9 @@ jobs:
     - name: install dependencies
       run: yarn
       
+    - name: precommit check
+      run: yarn precommit
+      
     - name: generate
       run: yarn generate
       env:
