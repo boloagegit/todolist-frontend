@@ -18,6 +18,9 @@
     </v-toolbar>
 
     <dir class="mt-5">
+      <v-text-field v-model="search" clearable placeholder="Search" class="mx-5">
+        <v-icon slot="prepend">mdi-magnify</v-icon>
+      </v-text-field>
       <v-skeleton-loader v-if="loading" class="mx-auto mt-10" type="list-item-three-line"></v-skeleton-loader>
       <v-list v-else two-line>
         <v-list-item v-for="task in tasks" :key="task.id">
@@ -102,6 +105,7 @@ import { Task } from '~/store/tasks';
 export default class IndexPage extends Vue {
   dialog: boolean = false;
   loading: boolean = false;
+  search: string = '';
   defaultItem: Task = {
     id: undefined,
     title: '',
@@ -118,7 +122,13 @@ export default class IndexPage extends Vue {
   };
 
   get tasks() {
-    return this._.orderBy([...(taskStore?.tasks || [])], ['finish', 'star', 'id'], ['asc', 'desc', 'desc']);
+    const tasks = [...(taskStore?.tasks || [])];
+    const filterdTasks = this.search
+      ? this._.filter(tasks, item => {
+          return item.title.includes(this.search) || item.description.includes(this.search);
+        })
+      : tasks;
+    return this._.orderBy(filterdTasks, ['finish', 'star', 'id'], ['asc', 'desc', 'desc']);
   }
 
   get computedTaskDialogTitle() {
