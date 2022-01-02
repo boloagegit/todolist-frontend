@@ -41,8 +41,8 @@
     <dir class="mt-5">
       <v-skeleton-loader
         v-if="loading"
-        class="mx-auto"
-        type="list-item-two-line"
+        class="mx-auto mt-10"
+        type="list-item-three-line"
       >
       </v-skeleton-loader>
       <v-list two-line v-else>
@@ -62,8 +62,10 @@
             <v-list-item-subtitle :class="{ 'line-through': task.finish }">
               {{ task.description }}
             </v-list-item-subtitle>
-            <v-list-item-subtitle :class="{ 'line-through': task.finish, 'mt-1': true }">
-              🕛 {{$moment(task.createdDate).format("LLL")}}
+            <v-list-item-subtitle
+              :class="{ 'line-through': task.finish, 'mt-1': true }"
+            >
+              {{ $moment(task.createdDate).format("lll") }}
             </v-list-item-subtitle>
           </v-list-item-content>
 
@@ -163,8 +165,10 @@ export default class IndexPage extends Vue {
   @Watch("dialog")
   onDialogChanged(value: boolean) {
     if (!value) {
-      this.editedItem = Object.assign({}, this.defaultItem);
-      (this.$refs.form as HTMLFormElement).reset();
+      setTimeout(() => {
+        this.editedItem = Object.assign({}, this.defaultItem);
+        (this.$refs.form as HTMLFormElement).reset();
+      }, 500);
     }
   }
 
