@@ -6,7 +6,7 @@
     <v-footer padless>
       <v-card class="flex" flat tile>
         <v-card-title>
-          <strong class="subheading">Get source code at my Github!</strong>
+          <strong class="subheading">For more information</strong>
 
           <v-spacer></v-spacer>
 
