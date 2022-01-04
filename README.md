@@ -1,3 +1,5 @@
+![build and deploy workflow](https://github.com/boloagegit/todolist-frontend/actions/workflows/main.yml/badge.svg)
+
 # todolist-frontend
 
 ## Build Setup
