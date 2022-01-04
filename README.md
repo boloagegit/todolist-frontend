@@ -1,4 +1,5 @@
 ![build and deploy workflow](https://github.com/boloagegit/todolist-frontend/actions/workflows/main.yml/badge.svg)
+[![pages-build-deployment](https://github.com/boloagegit/todolist-frontend/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/boloagegit/todolist-frontend/actions/workflows/pages/pages-build-deployment)
 
 # todolist-frontend
 
