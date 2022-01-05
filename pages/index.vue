@@ -89,7 +89,7 @@
         <v-card-actions>
           <v-spacer></v-spacer>
           <v-btn color="blue darken-1" text @click="dialog = false">Close</v-btn>
-          <v-btn color="blue darken-1" text @click="saveItem">Save</v-btn>
+          <v-btn color="blue darken-1" text :loading="loading" @click="saveItem">Save</v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>
@@ -164,7 +164,6 @@ export default class IndexPage extends Vue {
     this.dialog = true;
   }
 
-  addItem() {}
   async removeItem(task: Task) {
     const resp = await this.$dialog.confirm({
       text: 'Do you really want to delete this task?',
